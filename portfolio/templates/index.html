@@ -1,0 +1,43 @@
+{% extends "includes/main.html" %}
+{% load static %}
+{% block content %}
+    <section id="abt-details" class="content-section active">
+        <h1 id="headss">About Me</h1>
+        <hr id="hor-line">
+        <p id="summary">I am a dedicated Python Full Stack Developer with strong proficiency in building clean, responsive,
+                and user-centric web applications.I can specialize in both frontend and backend development using technologies 
+                such as HTML, CSS, Bootstrap(Frameworks), JavaScript, Python, Django, and MySQL.</p>
+        <p id="summary">I have a growing interest in AI integration and automation, focusing on developing practical, 
+            real-world solutions that improve efficiency and accessibility. I can also using Gen AI like Claude, Chagpt, etc... 
+            I actively enhance my problem-solving skills and continuously explore emerging technologies to stay aligned with modern industry standards.
+        </p>
+
+        <div class="skills">
+            <h2 style="margin-top: 40px; font-size: 22px;">What I'm Doing</h2>
+            <hr id="hor-line">
+            <div class="skillscard">
+                <div class="web-des">
+                    <img src="{% static 'img/code.png' %}" alt="web design">
+                    <div>
+                        <h3>Web Design</h3>
+                        <p>The most modern and high-quality design made at a professional level.</p>
+                    </div>
+                </div>
+                <div class="web-des">
+                    <img src="{% static 'img/app-development.png' %}" alt="">
+                    <div>
+                        <h3>Web Development</h3>
+                        <p>High-quality development of sites at the professional level.</p>
+                    </div>
+                </div>
+                <div class="web-des">
+                    <img src="{% static 'img/user-experience.png' %}" alt="">
+                    <div>
+                        <h3>UI/UX Design</h3>
+                        <p>Create a unique design for your site using the latest technologies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %} 

@@ -1,0 +1,158 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathan Kumar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="icon" href="{% static 'img/MK logo.jpg' %}">
+    <link rel="stylesheet" href="{% static "CSS/style.css" %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Profile section -->
+    <section class="flex">
+        <div class="Bio">
+            <p class="info" style="color: #1b18d6;">Contacts</p>
+            <h2 style="display: inline-block;">Mathan Kumar</h2>
+            <div class="Aim">
+                <p style="background-color: #1b18d6;">Full Stack Developer</p>
+                <a href="https://drive.google.com/file/d/1aVFkFiuNxpIElnlUb-nRmG-rhOiTmmus/view?usp=drivesdk" download target="_blank" style="background-color: #ffffff; color:black;">Resume CV</a>
+            </div>
+            <hr id="line" style="margin-top: 30px; border: 1px solid gray;">
+            <div id="contact-info">
+                <div id="mail">
+                    <div class="mail-img">
+                        <img src="{% static 'img/mail (1).png' %}" alt="Email">
+                    </div>
+                    <div>
+                        <p>EMAIL</p>
+                        <a href="mailto:mathask2710@gmail.com">mathansk2710@gmail.com</a>
+                    </div>
+                </div>
+                <div id="phones">
+                    <div class="phn-img">
+                        <img src="{% static 'img/telephone.png' %}" alt="">
+                    </div>
+                    <div>
+                        <p>PHONE</p>
+                        <a href="tel:+91 8015473021">+91 8015473021</a>
+                    </div>
+                </div>
+                <div id="loc">
+                    <div class="loc-img">
+                        <img src="{% static 'img/circle.png' %}" alt="">
+                    </div>
+                    <div>
+                        <p style="color: rgb(155, 155, 155);">LOCATION</p>
+                        <p>Madurai,TN</p>
+                    </div>
+                </div>
+                <div id="social-icon">
+                    <a href="https://github.com/Mathan495" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mathan-kumar027/" target="_blank" style="color: blue;"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.geeksforgeeks.org/user/mathansw46s/" target="_blank">
+                        <img src="https://media.geeksforgeeks.org/gfg-gg-logo.svg" style="width: 26px; color: white;" alt="GFG Logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="About">
+            <header id="nav-list">
+                <ul>
+                    <a href="{% url 'home' %}" class="navs {% if request.resolver_match.url_name == 'home' %}actives{% endif %} active " data-target="abt-details">About</a>
+                    <a href="{% url 'details' %}" class="navs {% if request.resolver_match.url_name == 'details' %}actives{% endif %} " data-target="details">Details</a>
+                    <a href="{% url 'projects' %}" class="navs {% if request.resolver_match.url_name == 'projects' %}actives{% endif %} " data-target="Project">Projects</a>
+                    <a href="{% url 'contact' %}" class="navs {% if request.resolver_match.url_name == 'contact' %}actives{% endif %} " data-target="contact">Contact</a> 
+                </ul>
+            </header>
+
+            <!-- All content sections inside about -->
+            <div class="content-wrapper">
+                <!-- Dynamic content-->
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+        
+    </section>
+
+    
+</body>
+
+<script>
+    const abt = document.getElementById("About")
+    const contlist = document.getElementById("contact-info")
+    const coinfo = document.querySelector(".info")
+    coinfo.addEventListener("click", () => {
+        // contlist.style.display = 'block';
+        contlist.classList.toggle("showing");
+        coinfo.classList.toggle("bc");
+        target.scrollIntoView({behavior: 'smooth'});
+    })
+</script>
+{% comment %} <script>
+    // contact form js
+    const form = document.querySelector('#form')
+    const usrname = document.getElementById("name")
+    const emailid = document.getElementById("email")
+    const msg = document.getElementById("Mesg")
+
+    form.addEventListener("submit" , (e)=>{
+            const success = validateInput();
+
+            if(success){
+                form.reset();
+                alert("Message is Sending...")
+            }
+    })
+
+    function validateInput(){
+
+        const nam = usrname.value.trim();
+        const mid = emailid.value.trim();
+        const mesge = msg.value.trim();
+        let isValid = true;
+
+        if(nam === ''){
+            isValid = false;
+            setError(usrname);
+        }
+        else{
+            setSuccess(usrname);
+        }
+
+        const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if(!pattern.test(mid)){
+            isValid = false;
+            setError(emailid);
+        }
+        else{
+            setSuccess(emailid);
+        }
+        if(mesge === ''){
+            isValid = false;
+            setError(msg);
+        }
+        else{
+            setSuccess(msg);
+        }
+        return isValid;
+    }
+
+    function setError(input){
+        input.classList.remove("right")
+        input.classList.add("wrong")
+    }
+    function setSuccess(input){
+        input.classList.add("right")
+        input.classList.remove("wrong")
+    }
+</script> {% endcomment %}
+
+</html>

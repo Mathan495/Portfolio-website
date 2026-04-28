@@ -1,0 +1,27 @@
+{% extends "includes/main.html" %}
+{% load static %} 
+{% block content %}
+    <section id="contact" class="content-section active">
+        <div class="contact-details">
+            <h1 style="font-weight: 600;">contact</h1>
+            <hr id="hor-line">
+            <iframe id="map-loc" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.986552860446!2d78.7412160742075!3d10.658151289483488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baa89337cba7f33%3A0x7120582d954fcb0f!2sAnna%20University%20RO%20Tiruchirappalli!5e0!3m2!1sen!2sin!4v1760852997757!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="cont-form">
+            <h2 style="font-weight: 600; margin-top: 22px;">Contact Form</h2>
+            <form method="POST" id="form" onsubmit="showpopup()">
+                {% csrf_token %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <script>alert("{{message}}")</script>
+                    {% endfor %}
+                {% endif %}
+                <input type="text" placeholder="Full name" name="name" id="name" required>
+                <input type="email" placeholder="Email address" name="email" id="email" required>
+                <input placeholder="Your message" name="message" id="Mesg" required>
+                <button class="submit"><i style="margin-right: 7px; font-size: 15px; color: #1b18d6;" class="fa-solid fa-paper-plane"></i>Send Message</button>
+            </form>
+        </div>
+    </section>
+
+{% endblock %}

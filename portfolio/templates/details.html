@@ -1,0 +1,112 @@
+{% extends 'includes/main.html' %}
+{% load static %}
+{% block content %}
+    <section id="details" class="content-section active">
+        <div class="det">
+            <h1 style="font-weight: 600;">Details</h1>
+            <hr id="hor-line">
+            <div class="education">
+                <a href=""><i class="fa-sharp fa-solid fa-graduation-cap"></i></a>
+                <h2>Education</h2>
+            </div>
+
+            <div class="studies">
+                <div class="clg">
+                    <span class="marks">
+                        &#9830;
+                    </span>
+                    <div class="clg-cont">
+                        <h4>University College Of Engineering (BIT CAMPUS)
+                            Tiruchirapalli</h4>
+                        <p style="color: rgb(0, 0, 219);">2023 - 2027</p>
+                        <p style="color: rgb(197, 197, 197); font-weight: 400;" id="cs">B.E - Computer Science Engineering</p>
+                        <p style="color: rgb(197, 197, 197); font-size: 15px;">CGPA : 7.93</p>
+                    </div>
+                </div>
+                <div class="schl">
+                    <span class="marks">
+                        &#9830;
+                    </span>
+
+                    <div class="schl-cont">
+                        <h4>Syed Ammal Matric Boys and Girls Hr.Sec.School - Ramanathapuram</h4>
+                        <p style="color: rgb(0, 0, 219);">2021 - 2023</p>
+                        <p style="color: rgb(197, 197, 197);" id="cs">12th - Computer Science</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="experience" class="education">
+                <a href=""><i class="fa-sharp fa-solid fa-graduation-cap"></i></a>
+                <h2>Experience</h2>
+            </div>
+            <div class="schl">
+                    <span class="marks">
+                        &#9830;
+                    </span>
+
+                    <div class="schl-cont">
+                        <h4>Freelancer</h4>
+                        <p style="color: rgb(0, 0, 219);;">2026 - present</p>
+                        <p style="color: rgb(197, 197, 197);" id="domain">Web Development, Web Design</p>
+                    </div>
+                </div>
+                <div class="schl">
+                    <span class="marks">
+                        &#9830;
+                    </span>
+
+                    <div class="schl-cont">
+                        <h4>CodSoft (Internship)</h4>
+                        <p style="color: rgb(0, 0, 219);;">2025 - 2 months</p>
+                        <p style="color: rgb(197, 197, 197);" id="domain">Web Development</p>
+                    </div>
+                </div>
+            <!-- Technical Skills -->
+            <div class="myskills">
+                <div class="skill-prof">
+                <img src="{% static 'img/skills.png' %}" alt="">
+                </div>
+                <h2>My Skills</h2>
+            </div>
+
+            <div class="skills-card">
+                <div id="web">
+                    <a href=""></a>
+                    <h4>Programming Languages</h4>
+                    <div class="frontend">
+                        <p><span>&#9830;</span> Python</p>
+                        <p><span>&#9830;</span> Java (Basics)</p>
+                        <p><span>&#9830;</span> JavaScript</p>
+                    </div>
+                </div>
+                <div id="web">
+                    <a href=""></a>
+                    <h4>Frontend Developement</h4>
+                    <div class="frontend">
+                        <p><span>&#9830;</span> Html</p>
+                        <p><span>&#9830;</span> CSS</p>
+                        <p><span>&#9830;</span> Bootstrap(Frameworks)</p>
+                    </div>
+                </div>
+                <div id="web">
+                    <a href=""></a>
+                    <h4>Backend & Database</h4>
+                    <div class="frontend">
+                        <p><span>&#9830;</span> Django</p>
+                        <p><span>&#9830;</span> MySQL</p>
+                    </div>
+                </div>
+                <div id="web">
+                    <a href=""></a>
+                    <h4>Tools & Technology</h4>
+                    <div class="frontend">
+                        <p><span>&#9830;</span> Git & GitHub</p>
+                        <p><span>&#9830;</span>Docker</p>
+                        <p><span>&#9830;</span>Figma</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %} 
