@@ -4,7 +4,7 @@ from django.db import models
 
 class Projects(models.Model):
     name = models.CharField(max_length=500)
-    image = models.ImageField(upload_to='')
+    image = models.ImageField(upload_to='projects/')
     tech_stack = models.CharField(max_length=1000)
     live_link = models.URLField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
